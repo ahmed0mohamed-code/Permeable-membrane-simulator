@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permeable membrane simulator</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #1a1a1a;
+            font-family: sans-serif;
+            color: white;
+        }
+        canvas{
+            display: block;
+        }
+
+        #controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+            pointer-events: auto;
+        }
+
+        .control-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <div class="control-group">
+            <label>Particles:</label>
+            <input type="range" id="particlesCount" min="10" max="300" value="50">
+            <span id="countVal">50</span>
+        </div>
+        <div class="control-group">
+            <label>Pore Size</label>
+            <input type="range" id="poreSize" min="0" max="30" value="15">
+            <span id="poreVal">15</span>
+        </div>
+        <div class="control-group">
+            <label>Temp (speed):</label>
+            <input type="range" id="tempControl" min="1" max="50" value="10">
+            <span id="tempVal">10</span>
+        </div>
+        <button onclick="init()">Restart</button>
+    </div>
+    
+    <canvas id="simCanvas"></canvas>
+    <script src="script.js"></script>
+</body>
+</html>
